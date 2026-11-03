@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+runs/
+config.json
+config.local.json
+config.*.local.json
+.env
+.env.*
+!.env.example
+.ppt-build/
+.DS_Store

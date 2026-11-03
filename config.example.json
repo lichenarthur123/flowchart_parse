@@ -1,0 +1,18 @@
+{
+  "vision": {
+    "base_url": "https://YOUR_PROVIDER/v1",
+    "model": "YOUR_VISION_MODEL",
+    "api_key_env": "VISION_API_KEY",
+    "timeout_seconds": 120,
+    "max_tokens": 4096,
+    "json_mode": false
+  },
+  "ocr": {
+    "base_url": "https://YOUR_PROVIDER/v1",
+    "model": "qwen-vl-ocr",
+    "api_key_env": "OCR_API_KEY",
+    "timeout_seconds": 120,
+    "max_tokens": 4096,
+    "json_mode": false
+  }
+}
