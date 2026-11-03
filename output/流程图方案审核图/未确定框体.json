@@ -1,0 +1,34 @@
+{
+  "nodes": [
+    {
+      "id": "r004_c001_node_002",
+      "type": "process",
+      "center_global_px": [
+        722.0,
+        4213.0
+      ],
+      "reason": "missing_or_invalid_local_box",
+      "crop": "0021"
+    },
+    {
+      "id": "r004_c001_node_003",
+      "type": "process",
+      "center_global_px": [
+        722.0,
+        4596.0
+      ],
+      "reason": "missing_or_invalid_local_box",
+      "crop": "0022"
+    },
+    {
+      "id": "r004_c001_node_004",
+      "type": "process",
+      "center_global_px": [
+        722.0,
+        4954.0
+      ],
+      "reason": "missing_or_invalid_local_box",
+      "crop": "0023"
+    }
+  ]
+}

@@ -1,0 +1,1656 @@
+{
+  "coordinate_system": "pixels_top_left",
+  "nodes": [
+    {
+      "id": "r001_c001_node_001",
+      "type": "process",
+      "center_global_px": [
+        721.0,
+        1222.0
+      ],
+      "bbox_global_px": [
+        383,
+        1133,
+        1057,
+        1287
+      ],
+      "text": "N04 补充申请资料 补齐规格和交付时间",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r001_c001_node_002",
+      "type": "process",
+      "center_global_px": [
+        721.0,
+        1492.0
+      ],
+      "bbox_global_px": [
+        383,
+        1453,
+        1057,
+        1607
+      ],
+      "text": "N06 检查需求说明 确认数量与验收标准",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r001_c002_node_001",
+      "type": "start",
+      "center_global_px": [
+        1796.0,
+        243.0
+      ],
+      "bbox_global_px": [
+        1461,
+        166,
+        2139,
+        334
+      ],
+      "text": "N01\n开始\n收到采购需求",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r001_c002_node_002",
+      "type": "process",
+      "center_global_px": [
+        1796.0,
+        563.0
+      ],
+      "bbox_global_px": [
+        1463,
+        493,
+        2137,
+        647
+      ],
+      "text": "N02 接收采购申请记录申请人与预算信息",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r001_c002_node_003",
+      "type": "decision",
+      "center_global_px": [
+        1796.0,
+        882.0
+      ],
+      "bbox_global_px": [
+        1465,
+        789,
+        2135,
+        991
+      ],
+      "text": "申请资料完整？\nN03",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r001_c003_node_001",
+      "type": "process",
+      "center_global_px": [
+        2880.0,
+        1210.0
+      ],
+      "bbox_global_px": [
+        2543,
+        1133,
+        3217,
+        1287
+      ],
+      "text": "N05 校验采购预算 核对部门预算余额",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r001_c003_node_002",
+      "type": "decision",
+      "center_global_px": [
+        2915.0,
+        1435.0
+      ],
+      "bbox_global_px": [
+        2545,
+        1429,
+        3215,
+        1631
+      ],
+      "text": "N07预算充足？",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r002_c001_node_003",
+      "type": "decision",
+      "center_global_px": [
+        723.0,
+        1855.0
+      ],
+      "bbox_global_px": [
+        385,
+        1749,
+        1055,
+        1951
+      ],
+      "text": "说明清楚？",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r002_c001_node_004",
+      "type": "process",
+      "center_global_px": [
+        722.0,
+        2179.0
+      ],
+      "bbox_global_px": [
+        383,
+        2093,
+        1057,
+        2247
+      ],
+      "text": "N10 确认采购需求 形成有效申请单",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r002_c002_node_001",
+      "type": "merge",
+      "center_global_px": [
+        1800.0,
+        2493.0
+      ],
+      "bbox_global_px": [
+        1750,
+        2440,
+        1851,
+        2541
+      ],
+      "text": "",
+      "text_status": "empty"
+    },
+    {
+      "id": "r002_c003_node_003",
+      "type": "process",
+      "center_global_px": [
+        2881.0,
+        1848.0
+      ],
+      "bbox_global_px": [
+        2543,
+        1773,
+        3217,
+        1927
+      ],
+      "text": "N09\n冻结预算额度\n记录冻结流水",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r002_c003_node_004",
+      "type": "process",
+      "center_global_px": [
+        2881.0,
+        2169.0
+      ],
+      "bbox_global_px": [
+        2543,
+        2093,
+        3217,
+        2247
+      ],
+      "text": "N11 登记预算占用 关联预算中心",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r003_c001_node_001",
+      "type": "process",
+      "center_global_px": [
+        721.0,
+        3449.0
+      ],
+      "bbox_global_px": [
+        383,
+        3373,
+        1057,
+        3527
+      ],
+      "text": "N15\n发起公开招标\n发布招标公告",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r003_c001_node_002",
+      "type": "decision",
+      "center_global_px": [
+        721.0,
+        3747.0
+      ],
+      "bbox_global_px": [
+        385,
+        3669,
+        1055,
+        3871
+      ],
+      "text": "N18 投标足够？",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r003_c002_node_002",
+      "type": "process",
+      "center_global_px": [
+        1801.0,
+        2811.0
+      ],
+      "bbox_global_px": [
+        1463,
+        2733,
+        2137,
+        2887
+      ],
+      "text": "N13\n制订采购计划\n确定采购方式和负责人",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r003_c002_node_003",
+      "type": "decision",
+      "center_global_px": [
+        1801.0,
+        3136.0
+      ],
+      "bbox_global_px": [
+        1465,
+        3029,
+        2135,
+        3231
+      ],
+      "text": "选择采购方式",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r003_c002_node_004",
+      "type": "process",
+      "center_global_px": [
+        1801.0,
+        3460.0
+      ],
+      "bbox_global_px": [
+        1463,
+        3373,
+        2137,
+        3527
+      ],
+      "text": "N16\n邀请供应商\n发送询价文件",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r003_c002_node_005",
+      "type": "decision",
+      "center_global_px": [
+        1801.0,
+        3786.0
+      ],
+      "bbox_global_px": [
+        1465,
+        3669,
+        2135,
+        3871
+      ],
+      "text": "报价有效？",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r003_c003_node_001",
+      "type": "process",
+      "center_global_px": [
+        2888.0,
+        3452.0
+      ],
+      "bbox_global_px": [
+        2543,
+        3373,
+        3217,
+        3527
+      ],
+      "text": "N17 申请单一来源 填写适用原因",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r003_c003_node_002",
+      "type": "process",
+      "center_global_px": [
+        2888.0,
+        3754.0
+      ],
+      "bbox_global_px": [
+        2543,
+        3693,
+        3217,
+        3847
+      ],
+      "text": "N20 合规性审查 检查授权与资质",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r004_c002_node_002",
+      "type": "process",
+      "center_global_px": [
+        1795.0,
+        4094.0
+      ],
+      "bbox_global_px": [
+        1463,
+        4013,
+        2137,
+        4167
+      ],
+      "text": "N22 比较报价方案 综合价格和交期",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r004_c002_node_003",
+      "type": "merge",
+      "center_global_px": [
+        1797.0,
+        4422.0
+      ],
+      "bbox_global_px": [
+        1750,
+        4360,
+        1851,
+        4461
+      ],
+      "text": "",
+      "text_status": "empty"
+    },
+    {
+      "id": "r004_c002_node_004",
+      "type": "merge",
+      "center_global_px": [
+        1796.0,
+        5049.0
+      ],
+      "bbox_global_px": [
+        1750,
+        5000,
+        1851,
+        5101
+      ],
+      "text": "",
+      "text_status": "empty"
+    },
+    {
+      "id": "r004_c003_node_002",
+      "type": "process",
+      "center_global_px": [
+        2880.0,
+        4092.0
+      ],
+      "bbox_global_px": [
+        2543,
+        4013,
+        3217,
+        4167
+      ],
+      "text": "N23 评估唯一性 收集佐证材料",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r004_c003_node_003",
+      "type": "decision",
+      "center_global_px": [
+        2880.0,
+        4416.0
+      ],
+      "bbox_global_px": [
+        2545,
+        4309,
+        3215,
+        4511
+      ],
+      "text": "N26 审查通过？",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r004_c003_node_004",
+      "type": "process",
+      "center_global_px": [
+        2880.0,
+        4738.0
+      ],
+      "bbox_global_px": [
+        2543,
+        4653,
+        3217,
+        4807
+      ],
+      "text": "N28 确认采购方式 审批单一来源",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r005_c001_node_001",
+      "type": "process",
+      "center_global_px": [
+        718.0,
+        5681.0
+      ],
+      "bbox_global_px": [
+        383,
+        5613,
+        1057,
+        5767
+      ],
+      "text": "N31\n安排现场尽调\n检查产能与质量体系",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r005_c001_node_002",
+      "type": "process",
+      "center_global_px": [
+        718.0,
+        6003.0
+      ],
+      "bbox_global_px": [
+        383,
+        5933,
+        1057,
+        6087
+      ],
+      "text": "N34 提交尽调报告 归档评估结论",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r005_c002_node_002",
+      "type": "decision",
+      "center_global_px": [
+        1803.0,
+        5353.0
+      ],
+      "bbox_global_px": [
+        1465,
+        5269,
+        2135,
+        5471
+      ],
+      "text": "供应商评估结果",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r005_c002_node_003",
+      "type": "process",
+      "center_global_px": [
+        1803.0,
+        5689.0
+      ],
+      "bbox_global_px": [
+        1463,
+        5613,
+        2137,
+        5767
+      ],
+      "text": "N32 确认候选供应商                                                             核验账户与资质",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r005_c002_node_004",
+      "type": "process",
+      "center_global_px": [
+        1802.0,
+        6029.0
+      ],
+      "bbox_global_px": [
+        1463,
+        5933,
+        2137,
+        6087
+      ],
+      "text": "N35 创建采购合同 生成合同草稿",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r005_c002_node_005",
+      "type": "merge",
+      "center_global_px": [
+        1802.0,
+        6297.0
+      ],
+      "bbox_global_px": [
+        1750,
+        6280,
+        1851,
+        6381
+      ],
+      "text": "",
+      "text_status": "empty"
+    },
+    {
+      "id": "r005_c003_node_001",
+      "type": "process",
+      "center_global_px": [
+        2880.0,
+        5696.0
+      ],
+      "bbox_global_px": [
+        2543,
+        5613,
+        3217,
+        5767
+      ],
+      "text": "N33 补充风险材料 要求供应商整改",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r005_c003_node_002",
+      "type": "process",
+      "center_global_px": [
+        2880.0,
+        6019.0
+      ],
+      "bbox_global_px": [
+        2543,
+        5933,
+        3217,
+        6087
+      ],
+      "text": "N36 复核整改结果更新风险等级",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r006_c002_node_003",
+      "type": "process",
+      "center_global_px": [
+        1801.0,
+        6656.0
+      ],
+      "bbox_global_px": [
+        1463,
+        6573,
+        2137,
+        6727
+      ],
+      "text": "N38 合同审批与归档 完成签署并通知执行",
+      "text_status": "recognized"
+    },
+    {
+      "id": "r006_c002_node_004",
+      "type": "end",
+      "center_global_px": [
+        1801.0,
+        6979.0
+      ],
+      "bbox_global_px": [
+        1460,
+        6882,
+        2142,
+        7042
+      ],
+      "text": "结束\n进入订单执行流程",
+      "text_status": "recognized"
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge_001",
+      "from": "r001_c001_node_001",
+      "to": "r001_c001_node_002",
+      "path_global_px": [
+        [
+          720,
+          1302
+        ],
+        [
+          720,
+          1437
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_002",
+      "from": "r001_c002_node_003",
+      "to": "r001_c001_node_001",
+      "path_global_px": [
+        [
+          1800,
+          1006
+        ],
+        [
+          1800,
+          1057
+        ],
+        [
+          724,
+          1057
+        ],
+        [
+          720,
+          1061
+        ],
+        [
+          720,
+          1117
+        ]
+      ],
+      "text": "不完整",
+      "text_status": "recognized",
+      "text_blocks": [
+        {
+          "text": "不完整",
+          "bbox_global_px": [
+            1220.2,
+            1002.6,
+            1298.2,
+            1037.4
+          ],
+          "id": "text_0003"
+        }
+      ]
+    },
+    {
+      "id": "edge_004",
+      "from": "r002_c001_node_003",
+      "to": "r001_c001_node_001",
+      "path_global_px": [
+        [
+          369,
+          1849
+        ],
+        [
+          179,
+          1848
+        ],
+        [
+          179,
+          1214
+        ],
+        [
+          183,
+          1210
+        ],
+        [
+          367,
+          1210
+        ]
+      ],
+      "text": "否",
+      "text_status": "recognized",
+      "text_blocks": [
+        {
+          "text": "否",
+          "bbox_global_px": [
+            193.8,
+            1515.4,
+            219.0,
+            1545.4
+          ],
+          "id": "text_0007"
+        }
+      ]
+    },
+    {
+      "id": "edge_005",
+      "from": "r001_c001_node_002",
+      "to": "r002_c001_node_003",
+      "path_global_px": [
+        [
+          720,
+          1622
+        ],
+        [
+          720,
+          1729
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_006",
+      "from": "r001_c002_node_001",
+      "to": "r001_c002_node_002",
+      "path_global_px": [
+        [
+          1800,
+          349
+        ],
+        [
+          1800,
+          477
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_007",
+      "from": "r001_c002_node_002",
+      "to": "r001_c002_node_003",
+      "path_global_px": [
+        [
+          1800,
+          662
+        ],
+        [
+          1800,
+          769
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_008",
+      "from": "r001_c002_node_003",
+      "to": "r001_c003_node_001",
+      "path_global_px": [
+        [
+          1800,
+          1006
+        ],
+        [
+          1801,
+          1058
+        ],
+        [
+          2879,
+          1058
+        ],
+        [
+          2880,
+          1117
+        ]
+      ],
+      "text": "完整",
+      "text_status": "recognized",
+      "text_blocks": [
+        {
+          "text": "完整",
+          "bbox_global_px": [
+            2311.4,
+            1003.8,
+            2365.4,
+            1036.2
+          ],
+          "id": "text_0004"
+        }
+      ]
+    },
+    {
+      "id": "edge_009",
+      "from": "r001_c003_node_001",
+      "to": "r001_c003_node_002",
+      "path_global_px": [
+        [
+          2880,
+          1302
+        ],
+        [
+          2880,
+          1409
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_010",
+      "from": "r001_c003_node_002",
+      "to": "r001_c003_node_001",
+      "path_global_px": [
+        [
+          3230,
+          1530
+        ],
+        [
+          3419,
+          1530
+        ],
+        [
+          3419,
+          1210
+        ],
+        [
+          3232,
+          1209
+        ]
+      ],
+      "text": "否",
+      "text_status": "recognized",
+      "text_blocks": [
+        {
+          "text": "否",
+          "bbox_global_px": [
+            3430.2,
+            1353.4,
+            3457.8,
+            1385.8
+          ],
+          "id": "text_0005"
+        }
+      ]
+    },
+    {
+      "id": "edge_011",
+      "from": "r001_c003_node_002",
+      "to": "r002_c003_node_003",
+      "path_global_px": [
+        [
+          2880,
+          1646
+        ],
+        [
+          2880,
+          1757
+        ]
+      ],
+      "text": "是",
+      "text_status": "recognized",
+      "text_blocks": [
+        {
+          "text": "是",
+          "bbox_global_px": [
+            2890.2,
+            1677.4,
+            2917.8,
+            1714.6
+          ],
+          "id": "text_0008"
+        }
+      ]
+    },
+    {
+      "id": "edge_012",
+      "from": "r002_c001_node_003",
+      "to": "r002_c001_node_004",
+      "path_global_px": [
+        [
+          720,
+          1966
+        ],
+        [
+          720,
+          2077
+        ]
+      ],
+      "text": "是",
+      "text_status": "recognized",
+      "text_blocks": [
+        {
+          "text": "是",
+          "bbox_global_px": [
+            733.8,
+            2002.6,
+            759.0,
+            2032.6
+          ],
+          "id": "text_0009"
+        }
+      ]
+    },
+    {
+      "id": "edge_013",
+      "from": "r002_c001_node_004",
+      "to": "r002_c002_node_001",
+      "path_global_px": [
+        [
+          720,
+          2262
+        ],
+        [
+          721,
+          2344
+        ],
+        [
+          1800,
+          2344
+        ],
+        [
+          1800,
+          2424
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_015",
+      "from": "r002_c003_node_004",
+      "to": "r002_c002_node_001",
+      "path_global_px": [
+        [
+          2880,
+          2262
+        ],
+        [
+          2880,
+          2343
+        ],
+        [
+          1800,
+          2344
+        ],
+        [
+          1800,
+          2424
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_016",
+      "from": "r002_c002_node_001",
+      "to": "r003_c002_node_002",
+      "path_global_px": [
+        [
+          1800,
+          2556
+        ],
+        [
+          1800,
+          2717
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_017",
+      "from": "r002_c003_node_003",
+      "to": "r002_c003_node_004",
+      "path_global_px": [
+        [
+          2880,
+          1942
+        ],
+        [
+          2880,
+          2077
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_018",
+      "from": "r003_c001_node_001",
+      "to": "r003_c001_node_002",
+      "path_global_px": [
+        [
+          720,
+          3542
+        ],
+        [
+          720,
+          3649
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_019",
+      "from": "r003_c001_node_002",
+      "to": "r003_c001_node_001",
+      "path_global_px": [
+        [
+          369,
+          3769
+        ],
+        [
+          179,
+          3768
+        ],
+        [
+          180,
+          3452
+        ],
+        [
+          183,
+          3450
+        ],
+        [
+          367,
+          3450
+        ]
+      ],
+      "text": "否",
+      "text_status": "recognized",
+      "text_blocks": [
+        {
+          "text": "否",
+          "bbox_global_px": [
+            193.8,
+            3593.4,
+            219.0,
+            3625.8
+          ],
+          "id": "text_0014"
+        }
+      ]
+    },
+    {
+      "id": "edge_020",
+      "from": "r003_c002_node_003",
+      "to": "r003_c001_node_001",
+      "path_global_px": [
+        [
+          1800,
+          3258
+        ],
+        [
+          1800,
+          3297
+        ],
+        [
+          724,
+          3297
+        ],
+        [
+          720,
+          3301
+        ],
+        [
+          720,
+          3344
+        ]
+      ],
+      "text": "公开招标",
+      "text_status": "unresolved",
+      "text_blocks": [
+        {
+          "text": "公开招标",
+          "bbox_global_px": [
+            1207.0,
+            3245.4,
+            1311.4,
+            3277.8
+          ],
+          "id": "text_0012"
+        }
+      ]
+    },
+    {
+      "id": "edge_023",
+      "from": "r003_c002_node_002",
+      "to": "r003_c002_node_003",
+      "path_global_px": [
+        [
+          1800,
+          2902
+        ],
+        [
+          1800,
+          3009
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_024",
+      "from": "r003_c002_node_003",
+      "to": "r003_c002_node_004",
+      "path_global_px": [
+        [
+          1800,
+          3258
+        ],
+        [
+          1800,
+          3344
+        ]
+      ],
+      "text": "",
+      "text_status": "unresolved",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_025",
+      "from": "r003_c002_node_003",
+      "to": "r003_c003_node_001",
+      "path_global_px": [
+        [
+          1800,
+          3246
+        ],
+        [
+          1801,
+          3298
+        ],
+        [
+          2879,
+          3298
+        ],
+        [
+          2880,
+          3357
+        ]
+      ],
+      "text": "",
+      "text_status": "unresolved",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_026",
+      "from": "r003_c002_node_004",
+      "to": "r003_c002_node_005",
+      "path_global_px": [
+        [
+          1800,
+          3542
+        ],
+        [
+          1800,
+          3649
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_027",
+      "from": "r003_c002_node_005",
+      "to": "r003_c002_node_004",
+      "path_global_px": [
+        [
+          2150,
+          3770
+        ],
+        [
+          2259,
+          3770
+        ],
+        [
+          2259,
+          3450
+        ],
+        [
+          2152,
+          3449
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_029",
+      "from": "r003_c002_node_005",
+      "to": "r004_c002_node_002",
+      "path_global_px": [
+        [
+          1800,
+          3886
+        ],
+        [
+          1800,
+          3997
+        ]
+      ],
+      "text": "是",
+      "text_status": "recognized",
+      "text_blocks": [
+        {
+          "text": "是",
+          "bbox_global_px": [
+            1811.8,
+            3922.2,
+            1839.4,
+            3954.6
+          ],
+          "id": "text_0016"
+        }
+      ]
+    },
+    {
+      "id": "edge_030",
+      "from": "r003_c003_node_001",
+      "to": "r003_c003_node_002",
+      "path_global_px": [
+        [
+          2880,
+          3542
+        ],
+        [
+          2880,
+          3677
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_031",
+      "from": "r004_c003_node_003",
+      "to": "r003_c003_node_001",
+      "path_global_px": [
+        [
+          3242,
+          4410
+        ],
+        [
+          3419,
+          4410
+        ],
+        [
+          3419,
+          3450
+        ],
+        [
+          3246,
+          3449
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_032",
+      "from": "r003_c003_node_002",
+      "to": "r004_c003_node_002",
+      "path_global_px": [
+        [
+          2880,
+          3862
+        ],
+        [
+          2880,
+          3997
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_033",
+      "from": "r004_c002_node_002",
+      "to": "r004_c002_node_003",
+      "path_global_px": [
+        [
+          1800,
+          4182
+        ],
+        [
+          1800,
+          4344
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_034",
+      "from": "r004_c002_node_003",
+      "to": "r004_c002_node_004",
+      "path_global_px": [
+        [
+          1800,
+          4476
+        ],
+        [
+          1800,
+          4984
+        ]
+      ],
+      "text": "",
+      "text_status": "unresolved",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_036",
+      "from": "r004_c003_node_004",
+      "to": "r004_c002_node_004",
+      "path_global_px": [
+        [
+          2880,
+          4822
+        ],
+        [
+          2880,
+          4903
+        ],
+        [
+          1800,
+          4904
+        ],
+        [
+          1800,
+          4984
+        ]
+      ],
+      "text": "",
+      "text_status": "unresolved",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_037",
+      "from": "r004_c002_node_004",
+      "to": "r005_c002_node_002",
+      "path_global_px": [
+        [
+          1800,
+          5116
+        ],
+        [
+          1800,
+          5249
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_038",
+      "from": "r004_c003_node_002",
+      "to": "r004_c003_node_003",
+      "path_global_px": [
+        [
+          2880,
+          4182
+        ],
+        [
+          2880,
+          4289
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_039",
+      "from": "r004_c003_node_003",
+      "to": "r004_c003_node_004",
+      "path_global_px": [
+        [
+          2880,
+          4538
+        ],
+        [
+          2880,
+          4624
+        ]
+      ],
+      "text": "通过",
+      "text_status": "recognized",
+      "text_blocks": [
+        {
+          "text": "通过",
+          "bbox_global_px": [
+            2876.6,
+            4559.8,
+            2928.2,
+            4592.2
+          ],
+          "id": "text_0023"
+        }
+      ]
+    },
+    {
+      "id": "edge_040",
+      "from": "r005_c001_node_001",
+      "to": "r005_c001_node_002",
+      "path_global_px": [
+        [
+          720,
+          5782
+        ],
+        [
+          720,
+          5917
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_041",
+      "from": "r005_c002_node_002",
+      "to": "r005_c001_node_001",
+      "path_global_px": [
+        [
+          1800,
+          5498
+        ],
+        [
+          1800,
+          5537
+        ],
+        [
+          724,
+          5537
+        ],
+        [
+          720,
+          5541
+        ],
+        [
+          720,
+          5584
+        ]
+      ],
+      "text": "需尽调",
+      "text_status": "unresolved",
+      "text_blocks": [
+        {
+          "text": "需尽调",
+          "bbox_global_px": [
+            1220.2,
+            5485.4,
+            1298.2,
+            5517.8
+          ],
+          "id": "text_0029"
+        }
+      ]
+    },
+    {
+      "id": "edge_045",
+      "from": "r005_c001_node_002",
+      "to": "r005_c002_node_005",
+      "path_global_px": [
+        [
+          720,
+          6102
+        ],
+        [
+          721,
+          6184
+        ],
+        [
+          1800,
+          6184
+        ],
+        [
+          1800,
+          6264
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_047",
+      "from": "r005_c002_node_002",
+      "to": "r005_c002_node_003",
+      "path_global_px": [
+        [
+          1800,
+          5498
+        ],
+        [
+          1800,
+          5584
+        ]
+      ],
+      "text": "",
+      "text_status": "unresolved",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_048",
+      "from": "r005_c002_node_002",
+      "to": "r005_c003_node_001",
+      "path_global_px": [
+        [
+          1800,
+          5486
+        ],
+        [
+          1801,
+          5538
+        ],
+        [
+          2879,
+          5538
+        ],
+        [
+          2880,
+          5597
+        ]
+      ],
+      "text": "需整改",
+      "text_status": "unresolved",
+      "text_blocks": [
+        {
+          "text": "需整改",
+          "bbox_global_px": [
+            2299.4,
+            5484.2,
+            2377.4,
+            5519.0
+          ],
+          "id": "text_0028"
+        }
+      ]
+    },
+    {
+      "id": "edge_049",
+      "from": "r005_c002_node_003",
+      "to": "r005_c002_node_004",
+      "path_global_px": [
+        [
+          1800,
+          5782
+        ],
+        [
+          1800,
+          5917
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_051",
+      "from": "r005_c002_node_004",
+      "to": "r005_c002_node_005",
+      "path_global_px": [
+        [
+          1800,
+          6102
+        ],
+        [
+          1800,
+          6264
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_053",
+      "from": "r005_c003_node_002",
+      "to": "r005_c002_node_005",
+      "path_global_px": [
+        [
+          2880,
+          6102
+        ],
+        [
+          2880,
+          6183
+        ],
+        [
+          1800,
+          6184
+        ],
+        [
+          1800,
+          6264
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_054",
+      "from": "r005_c002_node_005",
+      "to": "r006_c002_node_003",
+      "path_global_px": [
+        [
+          1800,
+          6396
+        ],
+        [
+          1800,
+          6557
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_055",
+      "from": "r005_c003_node_001",
+      "to": "r005_c003_node_002",
+      "path_global_px": [
+        [
+          2880,
+          5782
+        ],
+        [
+          2880,
+          5917
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    },
+    {
+      "id": "edge_056",
+      "from": "r006_c002_node_003",
+      "to": "r006_c002_node_004",
+      "path_global_px": [
+        [
+          1800,
+          6742
+        ],
+        [
+          1800,
+          6864
+        ]
+      ],
+      "text": "",
+      "text_status": "none_detected",
+      "text_blocks": []
+    }
+  ],
+  "edge_text_status": "completed"
+}

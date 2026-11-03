@@ -1,0 +1,187 @@
+{
+  "total": {
+    "model_calls": 150,
+    "http_requests": 153,
+    "successful_http_responses": 150,
+    "failed_or_unknown_requests": 3,
+    "reported_input_tokens": 129179,
+    "reported_output_tokens": 3702,
+    "reported_total_tokens": 132881,
+    "reported_image_tokens": 110012,
+    "reported_input_text_tokens": 19167,
+    "requests_missing_image_token_count": 3,
+    "requests_missing_input_text_token_count": 3,
+    "requests_missing_token_counts": {
+      "input": 3,
+      "output": 3,
+      "total": 3
+    }
+  },
+  "by_model": {
+    "deepseek-v4.1-flash": {
+      "model_calls": 82,
+      "http_requests": 85,
+      "successful_http_responses": 82,
+      "failed_or_unknown_requests": 3,
+      "reported_input_tokens": 92233,
+      "reported_output_tokens": 1548,
+      "reported_total_tokens": 93781,
+      "reported_image_tokens": 75530,
+      "reported_input_text_tokens": 16703,
+      "requests_missing_image_token_count": 3,
+      "requests_missing_input_text_token_count": 3,
+      "requests_missing_token_counts": {
+        "input": 3,
+        "output": 3,
+        "total": 3
+      }
+    },
+    "qwen-vl-ocr": {
+      "model_calls": 68,
+      "http_requests": 68,
+      "successful_http_responses": 68,
+      "failed_or_unknown_requests": 0,
+      "reported_input_tokens": 36946,
+      "reported_output_tokens": 2154,
+      "reported_total_tokens": 39100,
+      "reported_image_tokens": 34482,
+      "reported_input_text_tokens": 2464,
+      "requests_missing_image_token_count": 0,
+      "requests_missing_input_text_token_count": 0,
+      "requests_missing_token_counts": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    }
+  },
+  "by_stage": {
+    "dedup_box_review": {
+      "model_calls": 4,
+      "http_requests": 4,
+      "successful_http_responses": 4,
+      "failed_or_unknown_requests": 0,
+      "reported_input_tokens": 3940,
+      "reported_output_tokens": 48,
+      "reported_total_tokens": 3988,
+      "reported_image_tokens": 3488,
+      "reported_input_text_tokens": 452,
+      "requests_missing_image_token_count": 0,
+      "requests_missing_input_text_token_count": 0,
+      "requests_missing_token_counts": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    "dedup_pair_review": {
+      "model_calls": 6,
+      "http_requests": 6,
+      "successful_http_responses": 6,
+      "failed_or_unknown_requests": 0,
+      "reported_input_tokens": 5766,
+      "reported_output_tokens": 42,
+      "reported_total_tokens": 5808,
+      "reported_image_tokens": 5232,
+      "reported_input_text_tokens": 534,
+      "requests_missing_image_token_count": 0,
+      "requests_missing_input_text_token_count": 0,
+      "requests_missing_token_counts": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    "dedup_window": {
+      "model_calls": 15,
+      "http_requests": 15,
+      "successful_http_responses": 15,
+      "failed_or_unknown_requests": 0,
+      "reported_input_tokens": 16920,
+      "reported_output_tokens": 248,
+      "reported_total_tokens": 17168,
+      "reported_image_tokens": 14910,
+      "reported_input_text_tokens": 2010,
+      "requests_missing_image_token_count": 0,
+      "requests_missing_input_text_token_count": 0,
+      "requests_missing_token_counts": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    "edge_ocr": {
+      "model_calls": 32,
+      "http_requests": 32,
+      "successful_http_responses": 32,
+      "failed_or_unknown_requests": 0,
+      "reported_input_tokens": 32416,
+      "reported_output_tokens": 1758,
+      "reported_total_tokens": 34174,
+      "reported_image_tokens": 30816,
+      "reported_input_text_tokens": 1600,
+      "requests_missing_image_token_count": 0,
+      "requests_missing_input_text_token_count": 0,
+      "requests_missing_token_counts": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    },
+    "node_bounding_box": {
+      "model_calls": 39,
+      "http_requests": 40,
+      "successful_http_responses": 39,
+      "failed_or_unknown_requests": 1,
+      "reported_input_tokens": 42549,
+      "reported_output_tokens": 456,
+      "reported_total_tokens": 43005,
+      "reported_image_tokens": 34008,
+      "reported_input_text_tokens": 8541,
+      "requests_missing_image_token_count": 1,
+      "requests_missing_input_text_token_count": 1,
+      "requests_missing_token_counts": {
+        "input": 1,
+        "output": 1,
+        "total": 1
+      }
+    },
+    "node_location": {
+      "model_calls": 18,
+      "http_requests": 20,
+      "successful_http_responses": 18,
+      "failed_or_unknown_requests": 2,
+      "reported_input_tokens": 23058,
+      "reported_output_tokens": 754,
+      "reported_total_tokens": 23812,
+      "reported_image_tokens": 17892,
+      "reported_input_text_tokens": 5166,
+      "requests_missing_image_token_count": 2,
+      "requests_missing_input_text_token_count": 2,
+      "requests_missing_token_counts": {
+        "input": 2,
+        "output": 2,
+        "total": 2
+      }
+    },
+    "node_ocr": {
+      "model_calls": 36,
+      "http_requests": 36,
+      "successful_http_responses": 36,
+      "failed_or_unknown_requests": 0,
+      "reported_input_tokens": 4530,
+      "reported_output_tokens": 396,
+      "reported_total_tokens": 4926,
+      "reported_image_tokens": 3666,
+      "reported_input_text_tokens": 864,
+      "requests_missing_image_token_count": 0,
+      "requests_missing_input_text_token_count": 0,
+      "requests_missing_token_counts": {
+        "input": 0,
+        "output": 0,
+        "total": 0
+      }
+    }
+  },
+  "note": "仅汇总接口实际返回的 usage；缺失数据不按零计算。模型调用按逻辑调用计数，重试另计 HTTP 请求。"
+}

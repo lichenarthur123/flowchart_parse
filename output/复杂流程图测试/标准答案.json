@@ -1,0 +1,1641 @@
+{
+  "coordinate_system": "pixels_top_left",
+  "image_size_px": [
+    3600,
+    7510
+  ],
+  "nodes": [
+    {
+      "id": "N01",
+      "type": "start",
+      "label": "开始",
+      "description": "收到采购需求",
+      "row": 0,
+      "column": "C",
+      "bbox_global_px": [
+        1460,
+        170,
+        2140,
+        330
+      ],
+      "center_global_px": [
+        1800,
+        250
+      ]
+    },
+    {
+      "id": "N02",
+      "type": "process",
+      "label": "接收采购申请",
+      "description": "记录申请人与预算信息",
+      "row": 1,
+      "column": "C",
+      "bbox_global_px": [
+        1460,
+        490,
+        2140,
+        650
+      ],
+      "center_global_px": [
+        1800,
+        570
+      ]
+    },
+    {
+      "id": "N03",
+      "type": "decision",
+      "label": "申请资料完整？",
+      "description": "",
+      "row": 2,
+      "column": "C",
+      "bbox_global_px": [
+        1460,
+        795,
+        2140,
+        985
+      ],
+      "center_global_px": [
+        1800,
+        890
+      ]
+    },
+    {
+      "id": "N04",
+      "type": "process",
+      "label": "补充申请资料",
+      "description": "补齐规格和交付时间",
+      "row": 3,
+      "column": "L",
+      "bbox_global_px": [
+        380,
+        1130,
+        1060,
+        1290
+      ],
+      "center_global_px": [
+        720,
+        1210
+      ]
+    },
+    {
+      "id": "N05",
+      "type": "process",
+      "label": "校验采购预算",
+      "description": "核对部门预算余额",
+      "row": 3,
+      "column": "R",
+      "bbox_global_px": [
+        2540,
+        1130,
+        3220,
+        1290
+      ],
+      "center_global_px": [
+        2880,
+        1210
+      ]
+    },
+    {
+      "id": "N06",
+      "type": "process",
+      "label": "检查需求说明",
+      "description": "确认数量与验收标准",
+      "row": 4,
+      "column": "L",
+      "bbox_global_px": [
+        380,
+        1450,
+        1060,
+        1610
+      ],
+      "center_global_px": [
+        720,
+        1530
+      ]
+    },
+    {
+      "id": "N07",
+      "type": "decision",
+      "label": "预算充足？",
+      "description": "",
+      "row": 4,
+      "column": "R",
+      "bbox_global_px": [
+        2540,
+        1435,
+        3220,
+        1625
+      ],
+      "center_global_px": [
+        2880,
+        1530
+      ]
+    },
+    {
+      "id": "N08",
+      "type": "decision",
+      "label": "说明清楚？",
+      "description": "",
+      "row": 5,
+      "column": "L",
+      "bbox_global_px": [
+        380,
+        1755,
+        1060,
+        1945
+      ],
+      "center_global_px": [
+        720,
+        1850
+      ]
+    },
+    {
+      "id": "N09",
+      "type": "process",
+      "label": "冻结预算额度",
+      "description": "记录冻结流水",
+      "row": 5,
+      "column": "R",
+      "bbox_global_px": [
+        2540,
+        1770,
+        3220,
+        1930
+      ],
+      "center_global_px": [
+        2880,
+        1850
+      ]
+    },
+    {
+      "id": "N10",
+      "type": "process",
+      "label": "确认采购需求",
+      "description": "形成有效申请单",
+      "row": 6,
+      "column": "L",
+      "bbox_global_px": [
+        380,
+        2090,
+        1060,
+        2250
+      ],
+      "center_global_px": [
+        720,
+        2170
+      ]
+    },
+    {
+      "id": "N11",
+      "type": "process",
+      "label": "登记预算占用",
+      "description": "关联预算中心",
+      "row": 6,
+      "column": "R",
+      "bbox_global_px": [
+        2540,
+        2090,
+        3220,
+        2250
+      ],
+      "center_global_px": [
+        2880,
+        2170
+      ]
+    },
+    {
+      "id": "N12",
+      "type": "merge",
+      "label": "",
+      "description": "",
+      "row": 7,
+      "column": "C",
+      "bbox_global_px": [
+        1748,
+        2438,
+        1852,
+        2542
+      ],
+      "center_global_px": [
+        1800,
+        2490
+      ]
+    },
+    {
+      "id": "N13",
+      "type": "process",
+      "label": "制订采购计划",
+      "description": "确定采购方式和负责人",
+      "row": 8,
+      "column": "C",
+      "bbox_global_px": [
+        1460,
+        2730,
+        2140,
+        2890
+      ],
+      "center_global_px": [
+        1800,
+        2810
+      ]
+    },
+    {
+      "id": "N14",
+      "type": "decision",
+      "label": "选择采购方式",
+      "description": "",
+      "row": 9,
+      "column": "C",
+      "bbox_global_px": [
+        1460,
+        3035,
+        2140,
+        3225
+      ],
+      "center_global_px": [
+        1800,
+        3130
+      ]
+    },
+    {
+      "id": "N15",
+      "type": "process",
+      "label": "发起公开招标",
+      "description": "发布招标公告",
+      "row": 10,
+      "column": "L",
+      "bbox_global_px": [
+        380,
+        3370,
+        1060,
+        3530
+      ],
+      "center_global_px": [
+        720,
+        3450
+      ]
+    },
+    {
+      "id": "N16",
+      "type": "process",
+      "label": "邀请供应商",
+      "description": "发送询价文件",
+      "row": 10,
+      "column": "C",
+      "bbox_global_px": [
+        1460,
+        3370,
+        2140,
+        3530
+      ],
+      "center_global_px": [
+        1800,
+        3450
+      ]
+    },
+    {
+      "id": "N17",
+      "type": "process",
+      "label": "申请单一来源",
+      "description": "填写适用原因",
+      "row": 10,
+      "column": "R",
+      "bbox_global_px": [
+        2540,
+        3370,
+        3220,
+        3530
+      ],
+      "center_global_px": [
+        2880,
+        3450
+      ]
+    },
+    {
+      "id": "N18",
+      "type": "decision",
+      "label": "投标足够？",
+      "description": "",
+      "row": 11,
+      "column": "L",
+      "bbox_global_px": [
+        380,
+        3675,
+        1060,
+        3865
+      ],
+      "center_global_px": [
+        720,
+        3770
+      ]
+    },
+    {
+      "id": "N19",
+      "type": "decision",
+      "label": "报价有效？",
+      "description": "",
+      "row": 11,
+      "column": "C",
+      "bbox_global_px": [
+        1460,
+        3675,
+        2140,
+        3865
+      ],
+      "center_global_px": [
+        1800,
+        3770
+      ]
+    },
+    {
+      "id": "N20",
+      "type": "process",
+      "label": "合规性审查",
+      "description": "检查授权与资质",
+      "row": 11,
+      "column": "R",
+      "bbox_global_px": [
+        2540,
+        3690,
+        3220,
+        3850
+      ],
+      "center_global_px": [
+        2880,
+        3770
+      ]
+    },
+    {
+      "id": "N21",
+      "type": "process",
+      "label": "组织专家评审",
+      "description": "记录评分与意见",
+      "row": 12,
+      "column": "L",
+      "bbox_global_px": [
+        380,
+        4010,
+        1060,
+        4170
+      ],
+      "center_global_px": [
+        720,
+        4090
+      ]
+    },
+    {
+      "id": "N22",
+      "type": "process",
+      "label": "比较报价方案",
+      "description": "综合价格和交期",
+      "row": 12,
+      "column": "C",
+      "bbox_global_px": [
+        1460,
+        4010,
+        2140,
+        4170
+      ],
+      "center_global_px": [
+        1800,
+        4090
+      ]
+    },
+    {
+      "id": "N23",
+      "type": "process",
+      "label": "评估唯一性",
+      "description": "收集佐证材料",
+      "row": 12,
+      "column": "R",
+      "bbox_global_px": [
+        2540,
+        4010,
+        3220,
+        4170
+      ],
+      "center_global_px": [
+        2880,
+        4090
+      ]
+    },
+    {
+      "id": "N24",
+      "type": "process",
+      "label": "确定中标候选",
+      "description": "公示评审结果",
+      "row": 13,
+      "column": "L",
+      "bbox_global_px": [
+        380,
+        4330,
+        1060,
+        4490
+      ],
+      "center_global_px": [
+        720,
+        4410
+      ]
+    },
+    {
+      "id": "N25",
+      "type": "merge",
+      "label": "",
+      "description": "",
+      "row": 13,
+      "column": "C",
+      "bbox_global_px": [
+        1748,
+        4358,
+        1852,
+        4462
+      ],
+      "center_global_px": [
+        1800,
+        4410
+      ]
+    },
+    {
+      "id": "N26",
+      "type": "decision",
+      "label": "审查通过？",
+      "description": "",
+      "row": 13,
+      "column": "R",
+      "bbox_global_px": [
+        2540,
+        4315,
+        3220,
+        4505
+      ],
+      "center_global_px": [
+        2880,
+        4410
+      ]
+    },
+    {
+      "id": "N27",
+      "type": "process",
+      "label": "处理公示反馈",
+      "description": "记录异议及处理结果",
+      "row": 14,
+      "column": "L",
+      "bbox_global_px": [
+        380,
+        4650,
+        1060,
+        4810
+      ],
+      "center_global_px": [
+        720,
+        4730
+      ]
+    },
+    {
+      "id": "N28",
+      "type": "process",
+      "label": "确认采购方式",
+      "description": "审批单一来源",
+      "row": 14,
+      "column": "R",
+      "bbox_global_px": [
+        2540,
+        4650,
+        3220,
+        4810
+      ],
+      "center_global_px": [
+        2880,
+        4730
+      ]
+    },
+    {
+      "id": "N29",
+      "type": "merge",
+      "label": "",
+      "description": "",
+      "row": 15,
+      "column": "C",
+      "bbox_global_px": [
+        1748,
+        4998,
+        1852,
+        5102
+      ],
+      "center_global_px": [
+        1800,
+        5050
+      ]
+    },
+    {
+      "id": "N30",
+      "type": "decision",
+      "label": "供应商评估结果",
+      "description": "",
+      "row": 16,
+      "column": "C",
+      "bbox_global_px": [
+        1460,
+        5275,
+        2140,
+        5465
+      ],
+      "center_global_px": [
+        1800,
+        5370
+      ]
+    },
+    {
+      "id": "N31",
+      "type": "process",
+      "label": "安排现场尽调",
+      "description": "检查产能与质量体系",
+      "row": 17,
+      "column": "L",
+      "bbox_global_px": [
+        380,
+        5610,
+        1060,
+        5770
+      ],
+      "center_global_px": [
+        720,
+        5690
+      ]
+    },
+    {
+      "id": "N32",
+      "type": "process",
+      "label": "确认候选供应商",
+      "description": "核验账户与资质",
+      "row": 17,
+      "column": "C",
+      "bbox_global_px": [
+        1460,
+        5610,
+        2140,
+        5770
+      ],
+      "center_global_px": [
+        1800,
+        5690
+      ]
+    },
+    {
+      "id": "N33",
+      "type": "process",
+      "label": "补充风险材料",
+      "description": "要求供应商整改",
+      "row": 17,
+      "column": "R",
+      "bbox_global_px": [
+        2540,
+        5610,
+        3220,
+        5770
+      ],
+      "center_global_px": [
+        2880,
+        5690
+      ]
+    },
+    {
+      "id": "N34",
+      "type": "process",
+      "label": "提交尽调报告",
+      "description": "归档评估结论",
+      "row": 18,
+      "column": "L",
+      "bbox_global_px": [
+        380,
+        5930,
+        1060,
+        6090
+      ],
+      "center_global_px": [
+        720,
+        6010
+      ]
+    },
+    {
+      "id": "N35",
+      "type": "process",
+      "label": "创建采购合同",
+      "description": "生成合同草稿",
+      "row": 18,
+      "column": "C",
+      "bbox_global_px": [
+        1460,
+        5930,
+        2140,
+        6090
+      ],
+      "center_global_px": [
+        1800,
+        6010
+      ]
+    },
+    {
+      "id": "N36",
+      "type": "process",
+      "label": "复核整改结果",
+      "description": "更新风险等级",
+      "row": 18,
+      "column": "R",
+      "bbox_global_px": [
+        2540,
+        5930,
+        3220,
+        6090
+      ],
+      "center_global_px": [
+        2880,
+        6010
+      ]
+    },
+    {
+      "id": "N37",
+      "type": "merge",
+      "label": "",
+      "description": "",
+      "row": 19,
+      "column": "C",
+      "bbox_global_px": [
+        1748,
+        6278,
+        1852,
+        6382
+      ],
+      "center_global_px": [
+        1800,
+        6330
+      ]
+    },
+    {
+      "id": "N38",
+      "type": "process",
+      "label": "合同审批与归档",
+      "description": "完成签署并通知执行",
+      "row": 20,
+      "column": "C",
+      "bbox_global_px": [
+        1460,
+        6570,
+        2140,
+        6730
+      ],
+      "center_global_px": [
+        1800,
+        6650
+      ]
+    },
+    {
+      "id": "N39",
+      "type": "end",
+      "label": "结束",
+      "description": "进入订单执行流程",
+      "row": 21,
+      "column": "C",
+      "bbox_global_px": [
+        1460,
+        6890,
+        2140,
+        7050
+      ],
+      "center_global_px": [
+        1800,
+        6970
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "E01",
+      "from": "N01",
+      "to": "N02",
+      "label": "",
+      "path_global_px": [
+        [
+          1800,
+          330
+        ],
+        [
+          1800,
+          490
+        ]
+      ]
+    },
+    {
+      "id": "E02",
+      "from": "N02",
+      "to": "N03",
+      "label": "",
+      "path_global_px": [
+        [
+          1800,
+          650
+        ],
+        [
+          1800,
+          795
+        ]
+      ]
+    },
+    {
+      "id": "E03",
+      "from": "N03",
+      "to": "N04",
+      "label": "不完整",
+      "path_global_px": [
+        [
+          1800,
+          985
+        ],
+        [
+          1800,
+          1058
+        ],
+        [
+          720,
+          1058
+        ],
+        [
+          720,
+          1130
+        ]
+      ]
+    },
+    {
+      "id": "E04",
+      "from": "N03",
+      "to": "N05",
+      "label": "完整",
+      "path_global_px": [
+        [
+          1800,
+          985
+        ],
+        [
+          1800,
+          1058
+        ],
+        [
+          2880,
+          1058
+        ],
+        [
+          2880,
+          1130
+        ]
+      ]
+    },
+    {
+      "id": "E05",
+      "from": "N04",
+      "to": "N06",
+      "label": "",
+      "path_global_px": [
+        [
+          720,
+          1290
+        ],
+        [
+          720,
+          1450
+        ]
+      ]
+    },
+    {
+      "id": "E06",
+      "from": "N06",
+      "to": "N08",
+      "label": "",
+      "path_global_px": [
+        [
+          720,
+          1610
+        ],
+        [
+          720,
+          1755
+        ]
+      ]
+    },
+    {
+      "id": "E07",
+      "from": "N08",
+      "to": "N10",
+      "label": "是",
+      "path_global_px": [
+        [
+          720,
+          1945
+        ],
+        [
+          720,
+          2090
+        ]
+      ]
+    },
+    {
+      "id": "E08",
+      "from": "N08",
+      "to": "N04",
+      "label": "否",
+      "path_global_px": [
+        [
+          380,
+          1850
+        ],
+        [
+          180,
+          1850
+        ],
+        [
+          180,
+          1210
+        ],
+        [
+          380,
+          1210
+        ]
+      ]
+    },
+    {
+      "id": "E09",
+      "from": "N05",
+      "to": "N07",
+      "label": "",
+      "path_global_px": [
+        [
+          2880,
+          1290
+        ],
+        [
+          2880,
+          1435
+        ]
+      ]
+    },
+    {
+      "id": "E10",
+      "from": "N07",
+      "to": "N09",
+      "label": "是",
+      "path_global_px": [
+        [
+          2880,
+          1625
+        ],
+        [
+          2880,
+          1770
+        ]
+      ]
+    },
+    {
+      "id": "E11",
+      "from": "N07",
+      "to": "N05",
+      "label": "否",
+      "path_global_px": [
+        [
+          3220,
+          1530
+        ],
+        [
+          3420,
+          1530
+        ],
+        [
+          3420,
+          1210
+        ],
+        [
+          3220,
+          1210
+        ]
+      ]
+    },
+    {
+      "id": "E12",
+      "from": "N09",
+      "to": "N11",
+      "label": "",
+      "path_global_px": [
+        [
+          2880,
+          1930
+        ],
+        [
+          2880,
+          2090
+        ]
+      ]
+    },
+    {
+      "id": "E13",
+      "from": "N10",
+      "to": "N12",
+      "label": "",
+      "path_global_px": [
+        [
+          720,
+          2250
+        ],
+        [
+          720,
+          2344
+        ],
+        [
+          1800,
+          2344
+        ],
+        [
+          1800,
+          2438
+        ]
+      ]
+    },
+    {
+      "id": "E14",
+      "from": "N11",
+      "to": "N12",
+      "label": "",
+      "path_global_px": [
+        [
+          2880,
+          2250
+        ],
+        [
+          2880,
+          2344
+        ],
+        [
+          1800,
+          2344
+        ],
+        [
+          1800,
+          2438
+        ]
+      ]
+    },
+    {
+      "id": "E15",
+      "from": "N12",
+      "to": "N13",
+      "label": "",
+      "path_global_px": [
+        [
+          1800,
+          2542
+        ],
+        [
+          1800,
+          2730
+        ]
+      ]
+    },
+    {
+      "id": "E16",
+      "from": "N13",
+      "to": "N14",
+      "label": "",
+      "path_global_px": [
+        [
+          1800,
+          2890
+        ],
+        [
+          1800,
+          3035
+        ]
+      ]
+    },
+    {
+      "id": "E17",
+      "from": "N14",
+      "to": "N15",
+      "label": "公开招标",
+      "path_global_px": [
+        [
+          1800,
+          3225
+        ],
+        [
+          1800,
+          3298
+        ],
+        [
+          720,
+          3298
+        ],
+        [
+          720,
+          3370
+        ]
+      ]
+    },
+    {
+      "id": "E18",
+      "from": "N14",
+      "to": "N16",
+      "label": "邀请询价",
+      "path_global_px": [
+        [
+          1800,
+          3225
+        ],
+        [
+          1800,
+          3370
+        ]
+      ]
+    },
+    {
+      "id": "E19",
+      "from": "N14",
+      "to": "N17",
+      "label": "单一来源",
+      "path_global_px": [
+        [
+          1800,
+          3225
+        ],
+        [
+          1800,
+          3298
+        ],
+        [
+          2880,
+          3298
+        ],
+        [
+          2880,
+          3370
+        ]
+      ]
+    },
+    {
+      "id": "E20",
+      "from": "N15",
+      "to": "N18",
+      "label": "",
+      "path_global_px": [
+        [
+          720,
+          3530
+        ],
+        [
+          720,
+          3675
+        ]
+      ]
+    },
+    {
+      "id": "E21",
+      "from": "N18",
+      "to": "N21",
+      "label": "是",
+      "path_global_px": [
+        [
+          720,
+          3865
+        ],
+        [
+          720,
+          4010
+        ]
+      ]
+    },
+    {
+      "id": "E22",
+      "from": "N18",
+      "to": "N15",
+      "label": "否",
+      "path_global_px": [
+        [
+          380,
+          3770
+        ],
+        [
+          180,
+          3770
+        ],
+        [
+          180,
+          3450
+        ],
+        [
+          380,
+          3450
+        ]
+      ]
+    },
+    {
+      "id": "E23",
+      "from": "N16",
+      "to": "N19",
+      "label": "",
+      "path_global_px": [
+        [
+          1800,
+          3530
+        ],
+        [
+          1800,
+          3675
+        ]
+      ]
+    },
+    {
+      "id": "E24",
+      "from": "N19",
+      "to": "N22",
+      "label": "是",
+      "path_global_px": [
+        [
+          1800,
+          3865
+        ],
+        [
+          1800,
+          4010
+        ]
+      ]
+    },
+    {
+      "id": "E25",
+      "from": "N19",
+      "to": "N16",
+      "label": "否",
+      "path_global_px": [
+        [
+          2140,
+          3770
+        ],
+        [
+          2260,
+          3770
+        ],
+        [
+          2260,
+          3450
+        ],
+        [
+          2140,
+          3450
+        ]
+      ]
+    },
+    {
+      "id": "E26",
+      "from": "N17",
+      "to": "N20",
+      "label": "",
+      "path_global_px": [
+        [
+          2880,
+          3530
+        ],
+        [
+          2880,
+          3690
+        ]
+      ]
+    },
+    {
+      "id": "E27",
+      "from": "N20",
+      "to": "N23",
+      "label": "",
+      "path_global_px": [
+        [
+          2880,
+          3850
+        ],
+        [
+          2880,
+          4010
+        ]
+      ]
+    },
+    {
+      "id": "E28",
+      "from": "N23",
+      "to": "N26",
+      "label": "",
+      "path_global_px": [
+        [
+          2880,
+          4170
+        ],
+        [
+          2880,
+          4315
+        ]
+      ]
+    },
+    {
+      "id": "E29",
+      "from": "N26",
+      "to": "N28",
+      "label": "通过",
+      "path_global_px": [
+        [
+          2880,
+          4505
+        ],
+        [
+          2880,
+          4650
+        ]
+      ]
+    },
+    {
+      "id": "E30",
+      "from": "N26",
+      "to": "N17",
+      "label": "退回",
+      "path_global_px": [
+        [
+          3220,
+          4410
+        ],
+        [
+          3420,
+          4410
+        ],
+        [
+          3420,
+          3450
+        ],
+        [
+          3220,
+          3450
+        ]
+      ]
+    },
+    {
+      "id": "E31",
+      "from": "N21",
+      "to": "N24",
+      "label": "",
+      "path_global_px": [
+        [
+          720,
+          4170
+        ],
+        [
+          720,
+          4330
+        ]
+      ]
+    },
+    {
+      "id": "E32",
+      "from": "N24",
+      "to": "N27",
+      "label": "",
+      "path_global_px": [
+        [
+          720,
+          4490
+        ],
+        [
+          720,
+          4650
+        ]
+      ]
+    },
+    {
+      "id": "E33",
+      "from": "N22",
+      "to": "N25",
+      "label": "",
+      "path_global_px": [
+        [
+          1800,
+          4170
+        ],
+        [
+          1800,
+          4358
+        ]
+      ]
+    },
+    {
+      "id": "E34",
+      "from": "N27",
+      "to": "N29",
+      "label": "",
+      "path_global_px": [
+        [
+          720,
+          4810
+        ],
+        [
+          720,
+          4904
+        ],
+        [
+          1800,
+          4904
+        ],
+        [
+          1800,
+          4998
+        ]
+      ]
+    },
+    {
+      "id": "E35",
+      "from": "N25",
+      "to": "N29",
+      "label": "",
+      "path_global_px": [
+        [
+          1800,
+          4462
+        ],
+        [
+          1800,
+          4998
+        ]
+      ]
+    },
+    {
+      "id": "E36",
+      "from": "N28",
+      "to": "N29",
+      "label": "",
+      "path_global_px": [
+        [
+          2880,
+          4810
+        ],
+        [
+          2880,
+          4904
+        ],
+        [
+          1800,
+          4904
+        ],
+        [
+          1800,
+          4998
+        ]
+      ]
+    },
+    {
+      "id": "E37",
+      "from": "N29",
+      "to": "N30",
+      "label": "",
+      "path_global_px": [
+        [
+          1800,
+          5102
+        ],
+        [
+          1800,
+          5275
+        ]
+      ]
+    },
+    {
+      "id": "E38",
+      "from": "N30",
+      "to": "N31",
+      "label": "需尽调",
+      "path_global_px": [
+        [
+          1800,
+          5465
+        ],
+        [
+          1800,
+          5538
+        ],
+        [
+          720,
+          5538
+        ],
+        [
+          720,
+          5610
+        ]
+      ]
+    },
+    {
+      "id": "E39",
+      "from": "N30",
+      "to": "N32",
+      "label": "通过",
+      "path_global_px": [
+        [
+          1800,
+          5465
+        ],
+        [
+          1800,
+          5610
+        ]
+      ]
+    },
+    {
+      "id": "E40",
+      "from": "N30",
+      "to": "N33",
+      "label": "需整改",
+      "path_global_px": [
+        [
+          1800,
+          5465
+        ],
+        [
+          1800,
+          5538
+        ],
+        [
+          2880,
+          5538
+        ],
+        [
+          2880,
+          5610
+        ]
+      ]
+    },
+    {
+      "id": "E41",
+      "from": "N31",
+      "to": "N34",
+      "label": "",
+      "path_global_px": [
+        [
+          720,
+          5770
+        ],
+        [
+          720,
+          5930
+        ]
+      ]
+    },
+    {
+      "id": "E42",
+      "from": "N32",
+      "to": "N35",
+      "label": "",
+      "path_global_px": [
+        [
+          1800,
+          5770
+        ],
+        [
+          1800,
+          5930
+        ]
+      ]
+    },
+    {
+      "id": "E43",
+      "from": "N33",
+      "to": "N36",
+      "label": "",
+      "path_global_px": [
+        [
+          2880,
+          5770
+        ],
+        [
+          2880,
+          5930
+        ]
+      ]
+    },
+    {
+      "id": "E44",
+      "from": "N34",
+      "to": "N37",
+      "label": "",
+      "path_global_px": [
+        [
+          720,
+          6090
+        ],
+        [
+          720,
+          6184
+        ],
+        [
+          1800,
+          6184
+        ],
+        [
+          1800,
+          6278
+        ]
+      ]
+    },
+    {
+      "id": "E45",
+      "from": "N35",
+      "to": "N37",
+      "label": "",
+      "path_global_px": [
+        [
+          1800,
+          6090
+        ],
+        [
+          1800,
+          6278
+        ]
+      ]
+    },
+    {
+      "id": "E46",
+      "from": "N36",
+      "to": "N37",
+      "label": "",
+      "path_global_px": [
+        [
+          2880,
+          6090
+        ],
+        [
+          2880,
+          6184
+        ],
+        [
+          1800,
+          6184
+        ],
+        [
+          1800,
+          6278
+        ]
+      ]
+    },
+    {
+      "id": "E47",
+      "from": "N37",
+      "to": "N38",
+      "label": "",
+      "path_global_px": [
+        [
+          1800,
+          6382
+        ],
+        [
+          1800,
+          6570
+        ]
+      ]
+    },
+    {
+      "id": "E48",
+      "from": "N38",
+      "to": "N39",
+      "label": "",
+      "path_global_px": [
+        [
+          1800,
+          6730
+        ],
+        [
+          1800,
+          6890
+        ]
+      ]
+    }
+  ],
+  "text_blocks": [
+    {
+      "text": "注：资料缺失时退回补充",
+      "position_global_px": [
+        250,
+        1400
+      ]
+    },
+    {
+      "text": "注：采购方式须保留审批记录",
+      "position_global_px": [
+        2400,
+        2930
+      ]
+    },
+    {
+      "text": "注：整改不通过时重新评估",
+      "position_global_px": [
+        2400,
+        6130
+      ]
+    }
+  ],
+  "note": "节点框为绘制时的外接矩形；连线路径及方向为生成时的真实值。"
+}

@@ -1,0 +1,424 @@
+{
+  "coordinate_system": "pixels_top_left",
+  "assigned": [
+    {
+      "text": "不完整",
+      "bbox_global_px": [
+        1220.2,
+        1002.6,
+        1298.2,
+        1037.4
+      ],
+      "id": "text_0003",
+      "edge_id": "edge_002",
+      "distance_px": 19.6
+    },
+    {
+      "text": "完整",
+      "bbox_global_px": [
+        2311.4,
+        1003.8,
+        2365.4,
+        1036.2
+      ],
+      "id": "text_0004",
+      "edge_id": "edge_008",
+      "distance_px": 21.8
+    },
+    {
+      "text": "否",
+      "bbox_global_px": [
+        3430.2,
+        1353.4,
+        3457.8,
+        1385.8
+      ],
+      "id": "text_0005",
+      "edge_id": "edge_010",
+      "distance_px": 11.2
+    },
+    {
+      "text": "否",
+      "bbox_global_px": [
+        193.8,
+        1515.4,
+        219.0,
+        1545.4
+      ],
+      "id": "text_0007",
+      "edge_id": "edge_004",
+      "distance_px": 14.8
+    },
+    {
+      "text": "是",
+      "bbox_global_px": [
+        2890.2,
+        1677.4,
+        2917.8,
+        1714.6
+      ],
+      "id": "text_0008",
+      "edge_id": "edge_011",
+      "distance_px": 10.2
+    },
+    {
+      "text": "是",
+      "bbox_global_px": [
+        733.8,
+        2002.6,
+        759.0,
+        2032.6
+      ],
+      "id": "text_0009",
+      "edge_id": "edge_012",
+      "distance_px": 13.8
+    },
+    {
+      "text": "公开招标",
+      "bbox_global_px": [
+        1207.0,
+        3245.4,
+        1311.4,
+        3277.8
+      ],
+      "id": "text_0012",
+      "edge_id": "edge_020",
+      "distance_px": 19.2
+    },
+    {
+      "text": "否",
+      "bbox_global_px": [
+        193.8,
+        3593.4,
+        219.0,
+        3625.8
+      ],
+      "id": "text_0014",
+      "edge_id": "edge_019",
+      "distance_px": 14.2
+    },
+    {
+      "text": "是",
+      "bbox_global_px": [
+        1811.8,
+        3922.2,
+        1839.4,
+        3954.6
+      ],
+      "id": "text_0016",
+      "edge_id": "edge_029",
+      "distance_px": 11.8
+    },
+    {
+      "text": "通过",
+      "bbox_global_px": [
+        2876.6,
+        4559.8,
+        2928.2,
+        4592.2
+      ],
+      "id": "text_0023",
+      "edge_id": "edge_039",
+      "distance_px": 0.0
+    },
+    {
+      "text": "需整改",
+      "bbox_global_px": [
+        2299.4,
+        5484.2,
+        2377.4,
+        5519.0
+      ],
+      "id": "text_0028",
+      "edge_id": "edge_048",
+      "distance_px": 19.0
+    },
+    {
+      "text": "需尽调",
+      "bbox_global_px": [
+        1220.2,
+        5485.4,
+        1298.2,
+        5517.8
+      ],
+      "id": "text_0029",
+      "edge_id": "edge_041",
+      "distance_px": 19.2
+    }
+  ],
+  "unresolved": [
+    {
+      "text": "N12",
+      "tile": "r003_c002",
+      "reason": "missing_or_invalid_text_box"
+    },
+    {
+      "text": "N25",
+      "tile": "r005_c002",
+      "reason": "missing_or_invalid_text_box"
+    },
+    {
+      "text": "N29",
+      "tile": "r005_c002",
+      "reason": "missing_or_invalid_text_box"
+    },
+    {
+      "text": "通过",
+      "tile": "r005_c004",
+      "reason": "missing_or_invalid_text_box"
+    },
+    {
+      "text": "N37",
+      "tile": "r007_c002",
+      "reason": "missing_or_invalid_text_box"
+    },
+    {
+      "text": "采购审批与供应商管理流程",
+      "bbox_global_px": [
+        238.2,
+        52.2,
+        865.8,
+        111.0
+      ],
+      "id": "text_0001",
+      "reason": "no_nearby_edge"
+    },
+    {
+      "text": "复杂流程图测试样例 | 39 个节点 | 48 条连线",
+      "bbox_global_px": [
+        241.8,
+        125.4,
+        847.8,
+        162.6
+      ],
+      "id": "text_0002",
+      "reason": "no_nearby_edge"
+    },
+    {
+      "text": "注：资料缺失时退回补充",
+      "bbox_global_px": [
+        247.8,
+        1396.6,
+        568.2,
+        1429.0
+      ],
+      "id": "text_0006",
+      "reason": "annotation"
+    },
+    {
+      "text": "注：采购方式须保留审批记录",
+      "bbox_global_px": [
+        2403.8,
+        2924.6,
+        2772.2,
+        2961.8
+      ],
+      "id": "text_0010",
+      "reason": "annotation"
+    },
+    {
+      "text": "单一来源",
+      "bbox_global_px": [
+        2279.6,
+        3155.4,
+        2368.4,
+        3185.4
+      ],
+      "id": "text_0011",
+      "reason": "no_nearby_edge"
+    },
+    {
+      "text": "邀请询价",
+      "bbox_global_px": [
+        1773.4,
+        3281.4,
+        1877.8,
+        3313.8
+      ],
+      "id": "text_0013",
+      "reason": "ambiguous_edge",
+      "candidates": [
+        {
+          "edge_id": "edge_020",
+          "distance_px": 0.0
+        },
+        {
+          "edge_id": "edge_024",
+          "distance_px": 0.0
+        },
+        {
+          "edge_id": "edge_025",
+          "distance_px": 0.0
+        }
+      ]
+    },
+    {
+      "text": "是",
+      "bbox_global_px": [
+        731.4,
+        3922.2,
+        756.6,
+        3954.6
+      ],
+      "id": "text_0015",
+      "reason": "no_nearby_edge"
+    },
+    {
+      "text": "N21",
+      "bbox_global_px": [
+        403.8,
+        4026.6,
+        445.8,
+        4051.8
+      ],
+      "id": "text_0017",
+      "reason": "no_nearby_edge"
+    },
+    {
+      "text": "组织专家评审",
+      "bbox_global_px": [
+        600.0,
+        4055.4,
+        837.6,
+        4099.8
+      ],
+      "id": "text_0018",
+      "reason": "no_nearby_edge"
+    },
+    {
+      "text": "记录评分与意见",
+      "bbox_global_px": [
+        619.2,
+        4111.8,
+        818.4,
+        4144.2
+      ],
+      "id": "text_0019",
+      "reason": "no_nearby_edge"
+    },
+    {
+      "text": "N24",
+      "bbox_global_px": [
+        403.8,
+        4345.0,
+        445.8,
+        4370.2
+      ],
+      "id": "text_0020",
+      "reason": "no_nearby_edge"
+    },
+    {
+      "text": "确定中标候选",
+      "bbox_global_px": [
+        600.6,
+        4373.8,
+        834.6,
+        4418.2
+      ],
+      "id": "text_0021",
+      "reason": "no_nearby_edge"
+    },
+    {
+      "text": "公示评审结果",
+      "bbox_global_px": [
+        631.8,
+        4430.2,
+        803.4,
+        4462.6
+      ],
+      "id": "text_0022",
+      "reason": "no_nearby_edge"
+    },
+    {
+      "text": "N27",
+      "bbox_global_px": [
+        403.8,
+        4664.2,
+        445.8,
+        4689.4
+      ],
+      "id": "text_0024",
+      "reason": "no_nearby_edge"
+    },
+    {
+      "text": "处理公示反馈",
+      "bbox_global_px": [
+        600.6,
+        4695.4,
+        834.6,
+        4739.8
+      ],
+      "id": "text_0025",
+      "reason": "no_nearby_edge"
+    },
+    {
+      "text": "记录异议及处理结果",
+      "bbox_global_px": [
+        589.8,
+        4751.8,
+        845.4,
+        4784.2
+      ],
+      "id": "text_0026",
+      "reason": "no_nearby_edge"
+    },
+    {
+      "text": "N29",
+      "bbox_global_px": [
+        1863.4,
+        5011.4,
+        1907.8,
+        5036.6
+      ],
+      "id": "text_0027",
+      "reason": "ambiguous_edge",
+      "candidates": [
+        {
+          "edge_id": "edge_034",
+          "distance_px": 69.1
+        },
+        {
+          "edge_id": "edge_036",
+          "distance_px": 69.1
+        }
+      ]
+    },
+    {
+      "text": "通过",
+      "bbox_global_px": [
+        1799.8,
+        5521.4,
+        1851.4,
+        5553.8
+      ],
+      "id": "text_0030",
+      "reason": "ambiguous_edge",
+      "candidates": [
+        {
+          "edge_id": "edge_041",
+          "distance_px": 0.0
+        },
+        {
+          "edge_id": "edge_047",
+          "distance_px": 0.0
+        },
+        {
+          "edge_id": "edge_048",
+          "distance_px": 0.0
+        }
+      ]
+    },
+    {
+      "text": "注：整改不通过时重新评估",
+      "bbox_global_px": [
+        2399.0,
+        6126.2,
+        2748.2,
+        6163.4
+      ],
+      "id": "text_0031",
+      "reason": "annotation"
+    }
+  ],
+  "note": "文字与线条按几何距离关联；不确定的关联未写入边。"
+}

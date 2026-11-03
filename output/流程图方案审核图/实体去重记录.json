@@ -1,0 +1,369 @@
+{
+  "groups": [
+    {
+      "window": "r001_c001",
+      "node_ids": [
+        "r001_c001_node_001",
+        "r002_c001_node_001"
+      ]
+    },
+    {
+      "window": "r001_c001",
+      "node_ids": [
+        "r001_c001_node_002",
+        "r002_c001_node_002"
+      ]
+    },
+    {
+      "window": "r003_c001",
+      "node_ids": [
+        "r003_c001_node_002",
+        "r004_c001_node_001"
+      ]
+    },
+    {
+      "window": "r003_c002",
+      "node_ids": [
+        "r003_c002_node_005",
+        "r004_c002_node_001"
+      ]
+    },
+    {
+      "window": "r003_c002",
+      "node_ids": [
+        "r003_c003_node_002",
+        "r004_c003_node_001"
+      ]
+    },
+    {
+      "window": "r003_c003",
+      "node_ids": [
+        "r003_c003_node_002",
+        "r004_c003_node_001"
+      ]
+    },
+    {
+      "window": "r004_c002",
+      "node_ids": [
+        "r004_c002_node_004",
+        "r005_c002_node_001"
+      ]
+    },
+    {
+      "window": "r004_c003",
+      "node_ids": [
+        "r005_c002_node_001",
+        "r004_c002_node_004"
+      ]
+    },
+    {
+      "window": "dedup_pair_checks/dfc2e87d395d5a5f",
+      "node_ids": [
+        "r001_c003_node_001",
+        "r002_c003_node_001"
+      ],
+      "method": "focused_pair"
+    },
+    {
+      "window": "dedup_pair_checks/cb61a3af0389210f",
+      "node_ids": [
+        "r001_c003_node_002",
+        "r002_c003_node_002"
+      ],
+      "method": "focused_pair"
+    },
+    {
+      "window": "dedup_pair_checks/a641c283e8550beb",
+      "node_ids": [
+        "r002_c002_node_001",
+        "r003_c002_node_001"
+      ],
+      "method": "focused_box_overlap"
+    },
+    {
+      "window": "dedup_pair_checks/c408583444084c00",
+      "node_ids": [
+        "r005_c001_node_002",
+        "r006_c001_node_001"
+      ],
+      "method": "focused_pair"
+    },
+    {
+      "window": "dedup_pair_checks/43a389b223c08092",
+      "node_ids": [
+        "r005_c002_node_004",
+        "r006_c002_node_001"
+      ],
+      "method": "focused_pair"
+    },
+    {
+      "window": "dedup_pair_checks/a2eeac72eb614046",
+      "node_ids": [
+        "r005_c002_node_005",
+        "r006_c002_node_002"
+      ],
+      "method": "focused_box_overlap"
+    }
+  ],
+  "rejected_groups": [
+    {
+      "window": "r001_c001",
+      "group": [
+        "D004",
+        "D005"
+      ],
+      "node_ids": [
+        "r001_c002_node_002",
+        "r001_c002_node_003"
+      ],
+      "reason": "same_tile_ambiguous"
+    },
+    {
+      "window": "r001_c001",
+      "group": [
+        "D003",
+        "D009"
+      ],
+      "reason": "invalid_group"
+    },
+    {
+      "window": "r002_c001",
+      "group": [
+        "D006",
+        "D004"
+      ],
+      "node_ids": [
+        "r003_c002_node_001",
+        "r002_c002_node_001"
+      ],
+      "reason": "conflicting_type"
+    },
+    {
+      "window": "r003_c001",
+      "group": [
+        "D001",
+        "D003"
+      ],
+      "node_ids": [
+        "r003_c001_node_001",
+        "r003_c002_node_003"
+      ],
+      "reason": "conflicting_type"
+    },
+    {
+      "window": "r003_c002",
+      "group": [
+        "D001"
+      ],
+      "reason": "invalid_group"
+    },
+    {
+      "window": "r003_c002",
+      "group": [
+        "D002"
+      ],
+      "reason": "invalid_group"
+    },
+    {
+      "window": "r003_c002",
+      "group": [
+        "D004"
+      ],
+      "reason": "invalid_group"
+    },
+    {
+      "window": "r003_c002",
+      "group": [
+        "D007"
+      ],
+      "reason": "invalid_group"
+    },
+    {
+      "window": "r003_c002",
+      "group": [
+        "D008"
+      ],
+      "reason": "invalid_group"
+    },
+    {
+      "window": "r003_c002",
+      "group": [
+        "D010"
+      ],
+      "reason": "invalid_group"
+    },
+    {
+      "window": "r003_c002",
+      "group": [
+        "D011"
+      ],
+      "reason": "invalid_group"
+    },
+    {
+      "window": "r003_c002",
+      "group": [
+        "D012"
+      ],
+      "reason": "invalid_group"
+    },
+    {
+      "window": "r004_c002",
+      "group": [
+        "D007",
+        "D011"
+      ],
+      "node_ids": [
+        "r005_c002_node_005",
+        "r006_c002_node_002"
+      ],
+      "reason": "conflicting_type"
+    },
+    {
+      "window": "r004_c003",
+      "group": [
+        "D007",
+        "D011"
+      ],
+      "node_ids": [
+        "r005_c002_node_005",
+        "r006_c002_node_002"
+      ],
+      "reason": "conflicting_type"
+    },
+    {
+      "window": "r005_c001",
+      "group": [
+        "D001",
+        "D006"
+      ],
+      "node_ids": [
+        "r005_c001_node_001",
+        "r006_c001_node_001"
+      ],
+      "reason": "distance_too_large"
+    },
+    {
+      "window": "r005_c001",
+      "group": [
+        "D005",
+        "D008"
+      ],
+      "node_ids": [
+        "r005_c002_node_005",
+        "r006_c002_node_002"
+      ],
+      "reason": "conflicting_type"
+    },
+    {
+      "window": "r005_c002",
+      "group": [
+        "D003",
+        "D007"
+      ],
+      "node_ids": [
+        "r005_c002_node_005",
+        "r006_c002_node_002"
+      ],
+      "reason": "conflicting_type"
+    },
+    {
+      "window": "r005_c003",
+      "group": [
+        "D003",
+        "D007"
+      ],
+      "node_ids": [
+        "r005_c002_node_005",
+        "r006_c002_node_002"
+      ],
+      "reason": "conflicting_type"
+    }
+  ],
+  "focused_pair_checks": [
+    {
+      "node_ids": [
+        "r001_c003_node_001",
+        "r002_c003_node_001"
+      ],
+      "same_node": true,
+      "path": "dedup_pair_checks/dfc2e87d395d5a5f"
+    },
+    {
+      "node_ids": [
+        "r001_c003_node_002",
+        "r002_c003_node_002"
+      ],
+      "same_node": true,
+      "path": "dedup_pair_checks/cb61a3af0389210f"
+    },
+    {
+      "node_ids": [
+        "r002_c002_node_001",
+        "r003_c002_node_001"
+      ],
+      "same_node": true,
+      "path": "dedup_pair_checks/a641c283e8550beb",
+      "box_check": {
+        "bbox_global_px": [
+          [
+            1749,
+            2433,
+            1852,
+            2537
+          ],
+          [
+            1748,
+            2429,
+            1852,
+            2533
+          ]
+        ],
+        "iou": 0.9173494834342715
+      }
+    },
+    {
+      "node_ids": [
+        "r005_c001_node_002",
+        "r006_c001_node_001"
+      ],
+      "same_node": true,
+      "path": "dedup_pair_checks/c408583444084c00"
+    },
+    {
+      "node_ids": [
+        "r005_c002_node_004",
+        "r006_c002_node_001"
+      ],
+      "same_node": true,
+      "path": "dedup_pair_checks/43a389b223c08092"
+    },
+    {
+      "node_ids": [
+        "r005_c002_node_005",
+        "r006_c002_node_002"
+      ],
+      "same_node": true,
+      "path": "dedup_pair_checks/a2eeac72eb614046",
+      "box_check": {
+        "bbox_global_px": [
+          [
+            1749,
+            6274,
+            1852,
+            6378
+          ],
+          [
+            1750,
+            6273,
+            1854,
+            6378
+          ]
+        ],
+        "iou": 0.9622641509433962
+      }
+    }
+  ],
+  "note": "模型判断可能有误；冲突分组未合并，坐标保留原始候选。",
+  "path_base": "历史复核明细路径相对于本 JSON 所在目录；对应的中间图片和缓存已清理，路径仅供追溯。",
+  "details_status": "removed_intermediate_files"
+}
