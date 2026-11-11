@@ -5,6 +5,7 @@ import json
 import hashlib
 import math
 from contextlib import nullcontext
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from typing import Optional
 
@@ -122,17 +123,12 @@ def save_global_locations(image_path: Path, output: Path, nodes: list[dict]) -> 
     global_image.save(output / "global_marked.png")
 
 
-def save_location_results(image_path: Path, output: Path, region: dict, nodes: list[dict],
-                          include_global: bool = True) -> None:
-    """保存局部标点及坐标；单区域测试时同时绘制高清全图。"""
+def save_location_results(output: Path, region: dict, nodes: list[dict]) -> None:
+    """保存局部标点及坐标。"""
     with Image.open(output / "region.png") as img:
         local = img.convert("RGB")
     mark_nodes(local, nodes, "center_local_px")
     local.save(output / "region_marked.png")
-    if include_global:
-        save_global_locations(image_path, output, nodes)
-        save_final_nodes(output, nodes)
-        return
     save_json(output / "nodes.json", {"region": region, "nodes": nodes,
               "coordinate_system": "pixels_top_left",
               "note": "Model estimates are unverified; unresolved nodes are not drawn."})
@@ -330,7 +326,8 @@ def _request_pair_check(client: ModelClient, image: Image.Image, first: dict, se
 
 
 def deduplicate_nodes(client: ModelClient, image_path: Path, output: Path, nodes: list[dict],
-                      window_size: int = 2000, overlap: float = 25, resume: bool = False) -> list[dict]:
+                      window_size: int = 2000, overlap: float = 25, resume: bool = False,
+                      workers: int = 4) -> list[dict]:
     """高清滑窗去重，再复核相邻节点；保留原始候选坐标。"""
     if window_size <= 0 or not 0 <= overlap < 100:
         raise ValueError('无效的滑窗尺寸或重叠比例。')
@@ -365,14 +362,22 @@ def deduplicate_nodes(client: ModelClient, image_path: Path, output: Path, nodes
     evidence, rejected = [], []
     folder = output / 'dedup_windows'
     folder.mkdir(exist_ok=True)
+    jobs = []
     for row, y0 in enumerate(_starts(image.height, window_size, overlap), 1):
         for col, x0 in enumerate(_starts(image.width, window_size, overlap), 1):
             x1, y1 = min(x0 + window_size, image.width), min(y0 + window_size, image.height)
             selected = [n for n in nodes if x0 <= n['center_global_px'][0] < x1 and y0 <= n['center_global_px'][1] < y1]
-            if len(selected) < 2:
-                continue
-            name = f'r{row:03d}_c{col:03d}'
-            groups, aliases = _request_window_groups(client, image, folder / name, (x0, y0, x1, y1), selected, resume)
+            if len(selected) >= 2:
+                jobs.append((f'r{row:03d}_c{col:03d}', (x0, y0, x1, y1), selected))
+
+    def request_groups(job):
+        name, bbox, selected = job
+        return _request_window_groups(client, image, folder / name, bbox, selected, resume)
+
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        window_results = list(pool.map(request_groups, jobs))
+    for job, (groups, aliases) in zip(jobs, window_results):
+            name = job[0]
             counts = {}
             for group in groups:
                 if isinstance(group, list):
@@ -458,8 +463,7 @@ def process_image_entities(image: Path, folder: Path, image_metadata: dict, args
     print(f"{folder.name}：生成 {len(tiles)} 张局部图。", flush=True)
     if args.split_only:
         return
-    all_nodes = []
-    for tile in tiles:
+    def locate_tile(tile):
         tile_dir = tiles_dir / tile["id"]
         tile_nodes = tile_dir / "nodes.json"
         located = None
@@ -472,8 +476,14 @@ def process_image_entities(image: Path, folder: Path, image_metadata: dict, args
         if located is None:
             print(f"{tile['id']}：开始识别。", flush=True)
             located = extract_region_entities(client, tile_dir / "region.png", tile)
-            save_location_results(image, tile_dir, tile, located, include_global=False)
+            save_location_results(tile_dir, tile, located)
             print(f"{tile['id']}：识别 {len(located)} 个节点。", flush=True)
+        return located
+
+    with ThreadPoolExecutor(max_workers=getattr(args, "workers", 4)) as pool:
+        tile_results = list(pool.map(locate_tile, tiles))
+    all_nodes = []
+    for tile, located in zip(tiles, tile_results):
         all_nodes.extend([{**node, "id": f"{tile['id']}_{node['id']}", "tile_id": tile["id"]}
                           for node in located])
     save_json(folder / "nodes_before_dedup.json", {"nodes": all_nodes,
@@ -486,16 +496,9 @@ def process_image_entities(image: Path, folder: Path, image_metadata: dict, args
     if unresolved:
         print(f"有 {len(unresolved)} 条候选未定位，单独保留，其余候选继续去重。", flush=True)
     deduplicated = deduplicate_nodes(client, image, folder, located_nodes,
-                                     args.dedup_window, args.dedup_overlap, args.resume)
+                                     args.dedup_window, args.dedup_overlap, args.resume,
+                                     getattr(args, "workers", 4))
     save_global_locations(image, folder, deduplicated)
     save_final_nodes(folder, deduplicated + unresolved)
     print(f"已定位候选去重：{len(located_nodes)} → {len(deduplicated)}；未定位：{len(unresolved)}。", flush=True)
-
-
-def process_single_region(image: Path, folder: Path, args, client: ModelClient) -> None:
-    """识别用户指定的单个局部区域。"""
-    region = prepare_region(image, tuple(args.crop), folder, args.tile_max_size)
-    located = extract_region_entities(client, folder / "region.png", region)
-    save_location_results(image, folder, region, located)
-    print(f"{folder.name}：识别 {len(located)} 个节点，待确认 {sum(n['status'] == 'unresolved' for n in located)} 个。")
 

@@ -41,7 +41,8 @@ class ModelClient:
         url = cfg.base_url.rstrip("/")
         if not url.endswith("/chat/completions"):
             url += "/chat/completions"
-        payload = {"model": cfg.model, "messages": [{"role": "user", "content": content}], "max_tokens": cfg.max_tokens}
+        payload = {"model": cfg.model, "messages": [{"role": "user", "content": content}],
+                   "max_tokens": cfg.max_tokens}
         if json_output and cfg.json_mode:
             payload["response_format"] = {"type": "json_object"}
         if cfg.enable_thinking is not None:
@@ -86,15 +87,18 @@ class ModelClient:
         return self._request(prompt, images, json_output=False, stage=stage)
 
     def ask_json(self, prompt: str, images: list[Path], *, stage: str = 'unspecified') -> dict:
-        raw = self._request(prompt, images, json_output=True, stage=stage)
-        try:
-            if raw.startswith("```") and raw.endswith("```"):
-                raw = "\n".join(raw.splitlines()[1:-1])
-            data = json.loads(raw)
-            if not isinstance(data, dict):
-                raise ValueError("Expected JSON object")
-            return data
-        except (ValueError, KeyError, IndexError, AttributeError, TypeError):
-            raise RuntimeError("模型返回格式无效：需要 Chat Completions 响应及 JSON 对象内容。") from None
+        for attempt in range(3):
+            raw = self._request(prompt, images, json_output=True, stage=stage)
+            try:
+                if raw.startswith("```") and raw.endswith("```"):
+                    raw = "\n".join(raw.splitlines()[1:-1])
+                data = json.loads(raw)
+                if not isinstance(data, dict):
+                    raise ValueError("Expected JSON object")
+                return data
+            except (ValueError, KeyError, IndexError, AttributeError, TypeError):
+                if attempt == 2:
+                    raise RuntimeError("模型返回格式无效：需要 Chat Completions 响应及 JSON 对象内容，已尝试 3 次。") from None
+                time.sleep(2 ** attempt)
 
 

@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 import math
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -45,7 +46,7 @@ def draw_global_boxes(image: Image.Image, nodes: list[dict], output: Path) -> No
 
 def process_node_boxes(client: ModelClient, image_path: Path, output: Path, nodes_path: Path,
                        crop_size: int = 1200, resume: bool = False,
-                       retry_unresolved: bool = False, ocr_client: ModelClient | None = None) -> None:
+                       ocr_client: ModelClient | None = None, workers: int = 4) -> None:
     """逐节点定位局部框，识别框内文字并保存全局框。"""
     if crop_size <= 0:
         raise ValueError('节点框识别的截图尺寸必须大于 0。')
@@ -70,8 +71,8 @@ def process_node_boxes(client: ModelClient, image_path: Path, output: Path, node
     if resume and ocr_client is None and previous_boxes.is_file():
         previous_data = json.loads(previous_boxes.read_text(encoding='utf-8'))
         previous_nodes = {n['id']: n for n in previous_data.get('nodes', []) if isinstance(n, dict) and 'id' in n}
-    found, unresolved = [], []
-    for index, node in enumerate(nodes, 1):
+
+    def process_one(index: int, node: dict):
         folder = crop_dir / f'{index:04d}'
         folder.mkdir(exist_ok=True)
         result_path = folder / 'result.json'
@@ -87,20 +88,10 @@ def process_node_boxes(client: ModelClient, image_path: Path, output: Path, node
             if saved.get('request') != request:
                 raise ValueError(f"节点 {node['id']} 的缓存与当前截图不匹配。")
             response = saved['response']
-            if retry_unresolved and local_to_global_box(response.get('bbox'), crop_bbox, local_point,
-                                                        POINT_TOLERANCE_PX) is None:
-                save_json(folder / 'previous_result.json', saved)
-                response = None
         if response is None:
-            prompt = (f'这是流程图高清局部截图，宽 {crop.width} 像素、高 {crop.height} 像素。'
-                      '红点标记了目标节点，请只根据图中红点定位该节点的外轮廓，'
-                      '返回能包住节点本身的最小水平外接矩形。不要包含旁注、箭头、连线或其他节点；'
-                      '粗横条也可能是并行分叉或同步节点：如果红点位于粗横条上，'
-                      '请框住整段粗横条，不要把它当成普通连接线。'
-                      '不需要读取节点内文字或理解业务。截图原点在左上角，x 向右、y 向下。'
-                      '框体必须使用本张截图的像素坐标，格式为 [左上x, 左上y, 右下x, 右下y]，'
-                      '不要使用归一化坐标，也不要计算全图坐标。若节点被截断、红点不在节点上或无法确定，'
-                      '返回 {"bbox":null}；否则只返回 JSON 对象，例如 {"bbox":[100,200,500,300]}。')
+            prompt = (f'高清截图宽 {crop.width}、高 {crop.height}。红点标记目标节点，'
+                      '只返回其最小水平外接框的截图像素坐标 {"bbox":[x0,y0,x1,y1]}。'
+                      '不要包含文字、连线或其他节点；粗横条需框住整体。无法确定返回 {"bbox":null}。')
             print(f'节点框 {index}/{len(nodes)}：{node["id"]}', flush=True)
             response = client.ask_json(prompt, [marked_path], stage='node_bounding_box')
             save_json(result_path, {'request': request, 'response': response})
@@ -109,24 +100,28 @@ def process_node_boxes(client: ModelClient, image_path: Path, output: Path, node
         entry = {'id': node['id'], 'type': node.get('type', 'unknown'),
                  'center_global_px': node['center_global_px']}
         if global_box is None:
-            unresolved.append({**entry, 'reason': 'missing_or_invalid_local_box', 'crop': folder.name})
+            return None, {**entry, 'reason': 'missing_or_invalid_local_box', 'crop': folder.name}
+        entry['bbox_global_px'] = global_box
+        if ocr_client is not None:
+            print(f'节点文字 OCR {index}/{len(nodes)}：{node["id"]}', flush=True)
+            entry.update(recognize_node_text(ocr_client, image, global_box, folder / 'ocr', resume))
         else:
-            entry['bbox_global_px'] = global_box
-            if ocr_client is not None:
-                print(f'节点文字 OCR {index}/{len(nodes)}：{node["id"]}', flush=True)
-                entry.update(recognize_node_text(ocr_client, image, global_box, folder / 'ocr', resume))
+            previous = previous_nodes.get(node['id'], {})
+            if (previous.get('bbox_global_px') == global_box and
+                    previous.get('center_global_px') == node['center_global_px'] and
+                    previous.get('text_status') in ('recognized', 'empty')):
+                entry.update(text=previous.get('text'), text_status=previous['text_status'])
             else:
-                previous = previous_nodes.get(node['id'], {})
-                if (previous.get('bbox_global_px') == global_box and
-                        previous.get('center_global_px') == node['center_global_px'] and
-                        previous.get('text_status') in ('recognized', 'empty')):
-                    entry.update(text=previous.get('text'), text_status=previous['text_status'])
-                else:
-                    entry.update(text=None, text_status='not_requested')
-            distance = point_box_distance(local_point, local_box)
-            if distance:
-                entry.update(review_reason='point_outside_box', point_distance_px=distance)
-            found.append(entry)
+                entry.update(text=None, text_status='not_requested')
+        distance = point_box_distance(local_point, local_box)
+        if distance:
+            entry.update(review_reason='point_outside_box', point_distance_px=distance)
+        return entry, None
+
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        results = list(pool.map(lambda item: process_one(*item), enumerate(nodes, 1)))
+    found = [entry for entry, _ in results if entry is not None]
+    unresolved = [item for _, item in results if item is not None]
     draw_global_boxes(image, found, output / 'global_boxes_marked.png')
     save_json(output / 'boxes.json', {'coordinate_system': 'pixels_top_left', 'nodes': found})
     save_json(output / 'unresolved_boxes.json', {'nodes': unresolved})
