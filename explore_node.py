@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import math
 import re
+from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
@@ -151,23 +152,34 @@ relation 和 evidence 中提及任何节点时必须使用真实 ID，禁止使�
 
 
 def explore_relations(client: ModelClient, image_path: Path, entities_path: Path, work_dir: Path,
-                      max_steps: int = 8, resume: bool = False) -> list[dict]:
-    if max_steps < 1:
-        raise ValueError("每个实体的探索步数必须大于 0。")
+                      max_steps: int = 8, resume: bool = False, workers: int = 4) -> list[dict]:
+    if max_steps < 1 or workers < 1:
+        raise ValueError("探索步数和并发数必须大于 0。")
     work_dir.mkdir(parents=True, exist_ok=True)
     nodes = json.loads(entities_path.read_text(encoding="utf-8"))["nodes"]
     labels = node_labels(nodes)
-    progress_path = work_dir / "progress.json"
-    progress = json.loads(progress_path.read_text(encoding="utf-8")) if resume and progress_path.is_file() else {}
-    relations = progress.get("relations", [])
-    completed = set(progress.get("completed", []))
-    relation_keys = {(r["from"], r["to"]) for r in relations}
+    legacy_path = work_dir / "progress.json"
+    legacy = json.loads(legacy_path.read_text(encoding="utf-8")) if resume and legacy_path.is_file() else {}
+    legacy_completed = set(legacy.get("completed", []))
+    legacy_relations = legacy.get("relations", [])
     with Image.open(image_path) as source:
         original = source.convert("RGB")
-    for entry in nodes:
-        if entry["id"] in completed:
+
+    def explore(entry: dict) -> list[dict]:
+        entry_dir = work_dir / entry["id"]
+        entry_dir.mkdir(parents=True, exist_ok=True)
+        progress_path = entry_dir / "progress.json"
+        if resume and progress_path.is_file():
+            progress = json.loads(progress_path.read_text(encoding="utf-8"))
+            if progress.get("completed"):
+                print(f"复用已完成的 entrypoint：{entry['id']}", flush=True)
+                return progress["relations"]
+        if resume and entry["id"] in legacy_completed:
+            confirmed = [{**relation, "id": ""} for relation in legacy_relations
+                         if relation["from"] == entry["id"]]
+            save_json(progress_path, {"completed": True, "relations": confirmed})
             print(f"复用已完成的 entrypoint：{entry['id']}", flush=True)
-            continue
+            return confirmed
         print(f"开始处理 entrypoint：{entry['id']}", flush=True)
         marked = original.copy()
         mark_nodes(marked, nodes, labels, entry["id"])
@@ -177,7 +189,7 @@ def explore_relations(client: ModelClient, image_path: Path, entities_path: Path
         confirmed_targets = set()
         history = []
         for _ in range(max_steps):
-            screenshot = work_dir / "current.png"
+            screenshot = entry_dir / "current.png"
             marked.crop(tuple(window)).save(screenshot)
             response = client.ask_json(build_prompt(entry, nodes, labels, confirmed, history, window),
                                        [screenshot], stage="single_node_relation_exploration")
@@ -212,17 +224,20 @@ def explore_relations(client: ModelClient, image_path: Path, entities_path: Path
                 window = move_window(window, action, marked.size)
             else:
                 break
-        added = 0
-        for relation in confirmed:
+        save_json(progress_path, {"completed": True, "relations": confirmed})
+        print(f"完成 entrypoint：{entry['id']}，新增 {len(confirmed)} 条关系", flush=True)
+        return confirmed
+
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        results = list(pool.map(explore, nodes))
+    relations = []
+    relation_keys = set()
+    for node_relations in results:
+        for relation in node_relations:
             key = (relation["from"], relation["to"])
             if key not in relation_keys:
                 relation_keys.add(key)
                 relations.append(relation)
-                added += 1
-        completed.add(entry["id"])
-        save_json(progress_path, {"relations": relations, "completed": sorted(completed)})
-        print(f"完成 entrypoint：{entry['id']}，新增 {added} 条关系", flush=True)
     for index, relation in enumerate(relations, 1):
         relation["id"] = f"rel_{index:03d}"
-    save_json(progress_path, {"relations": relations, "completed": sorted(completed)})
     return relations

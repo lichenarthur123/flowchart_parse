@@ -31,7 +31,7 @@ def main() -> None:
     parser.add_argument("--no-ocr", action="store_true")
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--max-steps", type=int, default=8)
-    parser.add_argument("--workers", type=int, default=4, help="实体识别并发数，默认 4")
+    parser.add_argument("--workers", type=int, default=4, help="实体识别和 entrypoint 探索并发数，默认 4")
     args = parser.parse_args()
     source = args.input.resolve(strict=True)
     output = args.output.resolve()
@@ -62,7 +62,7 @@ def main() -> None:
         shutil.copy2(entity_dir / "global_marked.png", intermediate / "global_marked.png")
         shutil.copy2(entity_dir / "global_boxes_marked.png", intermediate / "global_boxes_marked.png")
         relations = explore_relations(vision, entity_dir / "image.png", entities_path,
-                                      intermediate / "relations", args.max_steps, args.resume)
+                                      intermediate / "relations", args.max_steps, args.resume, args.workers)
         save_json(relations_path, relations)
         shutil.rmtree(intermediate / "entities", ignore_errors=True)
         shutil.rmtree(intermediate / "relations", ignore_errors=True)
